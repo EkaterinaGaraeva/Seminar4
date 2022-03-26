@@ -2,29 +2,38 @@
 // из 8 элементов, заполненный нулями и единицами в случайном порядке.
 // [1,0,1,1,0,1,0,0]
 
-void RandomArray(int[] collection)
+int[] RandomArray(int length)
 {
-    for (int i = 0; i <= 7; i++)
+    int[] returningArray = new int[length];
+    for (int i = 0; i < length; i++)
     {
-        collection[i] = new Random().Next(0, 2);
+        returningArray[i] = new Random().Next(0, 2);
     }
+    return returningArray;
 }
 
-void PrintArray(int[] col)
+void PrintArray(int[] arrayToPrint)
 {
-    for(int i = 0; i < col.Length; i++)
+    Console.Write("[");
+    for(int i = 0; i < arrayToPrint.Length; i++)
     {
-        Console.Write(col[i]);
-        if (i < (col.Length - 1))
+        Console.Write(arrayToPrint[i]);
+        if (i < (arrayToPrint.Length - 1))
         {
             Console.Write(", ");
         }
     } 
+    Console.Write("]");
+    Console.WriteLine();
 }
 
-int[] array = new int[8];
-RandomArray(array);
-PrintArray(array);
-Console.WriteLine();
+int[] arrayNumberOne = RandomArray(5);
+PrintArray(arrayNumberOne);
+
+int[] arrayNumberTwo = RandomArray(20);
+PrintArray(arrayNumberTwo);
+
+int[] arrayNumberThree = RandomArray(8);
+PrintArray(arrayNumberThree);
 
 
