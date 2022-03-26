@@ -14,7 +14,11 @@ void PrintArray(int[] col)
 {
     for(int i = 0; i < col.Length; i++)
     {
-        Console.Write(col[i]+" ");
+        Console.Write(col[i]);
+        if (i < (col.Length - 1))
+        {
+            Console.Write(", ");
+        }
     } 
 }
 
